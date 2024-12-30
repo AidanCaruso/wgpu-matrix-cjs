@@ -20,7 +20,7 @@
     "makeindex": "node build/tools/makeindex.js",
     "pre-push": "npm run lint && npm run build && npm run test && npm run docs",
     "rollup-watch": "rollup -c -w",
-    "start": "rollup -c rollup.config.mjs -w",
+    "start": "rollup --bundleConfigAsCjs -c rollup.config.js -w",
     "test": "mocha test/tests"
   },
   "repository": {
