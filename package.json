@@ -5,7 +5,7 @@
   "main": "dist/3.x/wgpu-matrix.module.js",
   "module": "dist/3.x/wgpu-matrix.module.js",
   "types": "dist/3.x/wgpu-matrix.d.ts",
-  "type": "module",
+  "type": "commonjs",
   "sideEffects": false,
   "directories": {
     "test": "test"
@@ -20,7 +20,7 @@
     "makeindex": "node build/tools/makeindex.js",
     "pre-push": "npm run lint && npm run build && npm run test && npm run docs",
     "rollup-watch": "rollup -c -w",
-    "start": "rollup -c rollup.config.js -w",
+    "start": "rollup -c rollup.config.mjs -w",
     "test": "mocha test/tests"
   },
   "repository": {
@@ -46,6 +46,7 @@
   },
   "homepage": "https://github.com/greggman/wgpu-matrix#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@tsconfig/recommended": "^1.0.8",
@@ -58,7 +59,7 @@
     "eslint-plugin-require-trailing-comma": "^0.0.1",
     "express": "^4.21.1",
     "mocha": "^10.7.3",
-    "rollup": "^4.24.1",
+    "rollup": "^4.29.1",
     "showdown": "^2.1.0",
     "tslib": "^2.8.0",
     "typedoc": "^0.26.10",
