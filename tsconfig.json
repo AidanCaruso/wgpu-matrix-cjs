@@ -2,7 +2,7 @@
   "extends": "@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
     "target": "ESNext",
-    "module": "esnext",
+    "module": "CommonJS",
     "outDir": "dist/3.x",
   },
   "files": [
