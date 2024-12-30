@@ -2,7 +2,6 @@
 # -- clip-for-deploy-start --
 
 /docs
-/dist
 index.html
 
 # -- clip-for-deploy-end --

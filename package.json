@@ -5,7 +5,6 @@
   "main": "dist/3.x/wgpu-matrix.module.js",
   "module": "dist/3.x/wgpu-matrix.module.js",
   "types": "dist/3.x/wgpu-matrix.d.ts",
-  "type": "commonjs",
   "sideEffects": false,
   "directories": {
     "test": "test"
@@ -20,7 +19,7 @@
     "makeindex": "node build/tools/makeindex.js",
     "pre-push": "npm run lint && npm run build && npm run test && npm run docs",
     "rollup-watch": "rollup -c -w",
-    "start": "rollup --bundleConfigAsCjs -c rollup.config.js -w",
+    "start": "rollup --bundleConfigAsCjs -c rollup.config.mjs -w",
     "test": "mocha test/tests"
   },
   "repository": {
@@ -40,6 +39,7 @@
     "graphics"
   ],
   "author": "Gregg Tavares",
+  "type": "module",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/greggman/wgpu-matrix/issues"
@@ -47,6 +47,7 @@
   "homepage": "https://github.com/greggman/wgpu-matrix#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@tsconfig/recommended": "^1.0.8",

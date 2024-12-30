@@ -6,10 +6,11 @@ const pkg = JSON.parse(fs.readFileSync('package.json', {encoding: 'utf8'}));
 const banner = `/* wgpu-matrix@${pkg.version}, license MIT */`;
 const ver = `${/^(\d+)\./.exec(pkg.version)[1]}.x`;
 import commonjs from '@rollup/plugin-commonjs'
-
+import nodeResolve from '@rollup/plugin-node-resolve';
 const plugins = [
-    commonjs(),
     typescript({ tsconfig: './tsconfig.json' }),
+    commonjs(),
+    nodeResolve()
 ];
 
 const minPlugins = [
@@ -50,7 +51,7 @@ export default [
         output: [
             {
                 file: `dist/${ver}/wgpu-matrix.module.min.js`,
-                format: 'esm',
+                format: 'cjs',
                 sourcemap: true,
                 banner,
                 freeze: false,
