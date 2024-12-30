@@ -27,7 +27,12 @@
     "url": "git+https://github.com/greggman/wgpu-matrix.git"
   },
   "files": [
-    "dist/3.x/**"
+    "*.cjs",
+    "*.d.cts",
+    "*.d.ts",
+    "*.mjs",
+    "bin",
+    "dist"
   ],
   "keywords": [
     "webgpu",
