@@ -1,0 +1,55 @@
+import { QuatArg } from './quat';
+import { Mat3Arg, Mat3Type } from './mat3';
+import { Mat4Arg } from './mat4';
+import { Vec2Arg } from './vec2';
+import { Vec3Arg } from './vec3';
+import { BaseArgType } from './types';
+export { Mat3Arg, Mat3Type };
+type Mat3Ctor<T extends Mat3Arg = Float32Array> = new (n: number) => T;
+/**
+ * Generates a typed API for Mat3
+ * */
+declare function getAPIImpl<MatType extends Mat3Arg = Float32Array>(Ctor: Mat3Ctor<MatType>): {
+    clone: <T extends Mat3Arg = MatType>(m: Mat3Arg, dst?: T) => T;
+    create: (v0?: number, v1?: number, v2?: number, v3?: number, v4?: number, v5?: number, v6?: number, v7?: number, v8?: number) => MatType;
+    set: <T extends Mat3Arg = MatType>(v0: number, v1: number, v2: number, v3: number, v4: number, v5: number, v6: number, v7: number, v8: number, dst?: T) => T;
+    fromMat4: <T extends Mat3Arg = MatType>(m4: Mat4Arg, dst?: T) => T;
+    fromQuat: <T extends Mat3Arg = MatType>(q: QuatArg, dst?: T) => T;
+    negate: <T extends Mat3Arg = MatType>(m: Mat3Arg, dst?: T) => T;
+    copy: <T extends Mat3Arg = MatType>(m: Mat3Arg, dst?: T) => T;
+    equalsApproximately: (a: Mat3Arg, b: Mat3Arg) => boolean;
+    equals: (a: Mat3Arg, b: Mat3Arg) => boolean;
+    identity: <T extends Mat3Arg = MatType>(dst?: T) => T;
+    transpose: <T extends Mat3Arg = MatType>(m: Mat3Arg, dst?: T) => T;
+    inverse: <T extends Mat3Arg = MatType>(m: Mat3Arg, dst?: T) => T;
+    invert: <T extends Mat3Arg = MatType>(m: Mat3Arg, dst?: T) => T;
+    determinant: (m: Mat3Arg) => number;
+    mul: <T extends Mat3Arg = MatType>(a: Mat3Arg, b: Mat3Arg, dst?: T) => T;
+    multiply: <T extends Mat3Arg = MatType>(a: Mat3Arg, b: Mat3Arg, dst?: T) => T;
+    setTranslation: <T extends Mat3Arg = MatType>(a: Mat3Arg, v: Vec2Arg, dst?: T) => T;
+    getTranslation: <T extends Vec2Arg = MatType>(m: Mat3Arg, dst?: T) => T;
+    getAxis: <T extends Vec2Arg = MatType>(m: Mat3Arg, axis: number, dst?: T) => T;
+    setAxis: <T extends Mat3Arg = MatType>(m: Mat3Arg, v: Vec2Arg, axis: number, dst?: T) => T;
+    getScaling: <T extends Vec2Arg = MatType>(m: Mat3Arg, dst?: T) => MatType | T;
+    get3DScaling: <T extends Vec3Arg = MatType>(m: Mat3Arg, dst?: T) => MatType | T;
+    translation: <T extends Mat3Arg = MatType>(v: Vec2Arg, dst?: T) => T;
+    translate: <T extends Mat3Arg = MatType>(m: Mat3Arg, v: Vec2Arg, dst?: T) => T;
+    rotation: <T extends Mat3Arg = MatType>(angleInRadians: number, dst?: T) => T;
+    rotate: <T extends Mat3Arg = MatType>(m: Mat3Arg, angleInRadians: number, dst?: T) => T;
+    rotationX: <T extends Mat3Arg = MatType>(angleInRadians: number, dst?: T) => T;
+    rotateX: <T extends Mat3Arg = MatType>(m: Mat3Arg, angleInRadians: number, dst?: T) => T;
+    rotationY: <T extends Mat3Arg = MatType>(angleInRadians: number, dst?: T) => T;
+    rotateY: <T extends Mat3Arg = MatType>(m: Mat3Arg, angleInRadians: number, dst?: T) => T;
+    rotationZ: <T extends Mat3Arg = MatType>(angleInRadians: number, dst?: T) => T;
+    rotateZ: <T extends Mat3Arg = MatType>(m: Mat3Arg, angleInRadians: number, dst?: T) => T;
+    scaling: <T extends Mat3Arg = MatType>(v: Vec2Arg, dst?: T) => T;
+    scale: <T extends Mat3Arg = MatType>(m: Mat3Arg, v: Vec2Arg, dst?: T) => T;
+    uniformScaling: <T extends Mat3Arg = MatType>(s: number, dst?: T) => T;
+    uniformScale: <T extends Mat3Arg = MatType>(m: Mat3Arg, s: number, dst?: T) => T;
+    scaling3D: <T extends Mat3Arg = MatType>(v: Vec3Arg, dst?: T) => T;
+    scale3D: <T extends Mat3Arg = MatType>(m: Mat3Arg, v: Vec3Arg, dst?: T) => T;
+    uniformScaling3D: <T extends Mat3Arg = MatType>(s: number, dst?: T) => T;
+    uniformScale3D: <T extends Mat3Arg = MatType>(m: Mat3Arg, s: number, dst?: T) => T;
+};
+type API<T extends BaseArgType = Float32Array> = ReturnType<typeof getAPIImpl<T>>;
+export declare function getAPI<T extends Mat4Arg = Float32Array>(Ctor: Mat3Ctor<T>): API<T>;
