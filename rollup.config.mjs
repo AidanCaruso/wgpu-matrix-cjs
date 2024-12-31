@@ -14,8 +14,9 @@ export default [
         input: 'src/wgpu-matrix.ts',
         output: [
             {
+                name: 'wgpuMatrix',
                 file: `dist/${ver}/wgpu-matrix.module.js`,
-                format: 'esm',
+                format: 'umd',
                 banner
             },
         ],
