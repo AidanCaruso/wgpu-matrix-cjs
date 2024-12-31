@@ -7,16 +7,7 @@ const banner = `/* wgpu-matrix@${pkg.version}, license MIT */`;
 const ver = `${/^(\d+)\./.exec(pkg.version)[1]}.x`;
 import commonjs from '@rollup/plugin-commonjs'
 import nodeResolve from '@rollup/plugin-node-resolve';
-const plugins = [
-    typescript({ tsconfig: './tsconfig.json' }),
-    commonjs(),
-    nodeResolve()
-];
-
-const minPlugins = [
-    ...plugins,
-    terser()
-];
+import cleanupPlugin from 'rollup-plugin-cleanup';
 
 export default [
     {
@@ -26,53 +17,14 @@ export default [
                 name: 'wgpuMatrix',
                 file: `dist/${ver}/wgpu-matrix.module.js`,
                 format: 'umd',
-                sourcemap: true,
-                banner,
-                freeze: false,
+                banner
             },
         ],
-        plugins,
-    },
-    {
-        input: 'src/wgpu-matrix.ts',
-        output: [
-            {
-                name: 'wgpuMatrix',
-                file: `dist/${ver}/wgpu-matrix.js`,
-                format: 'umd',
-                sourcemap: true,
-                banner,
-                freeze: false,
-            },
+        plugins: [
+            nodeResolve(),
+            typescript({ tsconfig: './tsconfig.json' }),
+            commonjs(),
+            cleanupPlugin()
         ],
-        plugins,
-    },
-    {
-        input: 'src/wgpu-matrix.ts',
-        output: [
-            {
-                name: 'wgpuMatrix',
-                file: `dist/${ver}/wgpu-matrix.module.min.js`,
-                format: 'umd',
-                sourcemap: true,
-                banner,
-                freeze: false,
-            },
-        ],
-        plugins: minPlugins,
-    },
-    {
-        input: 'src/wgpu-matrix.ts',
-        output: [
-            {
-                name: 'wgpuMatrix',
-                file: `dist/${ver}/wgpu-matrix.min.js`,
-                format: 'umd',
-                sourcemap: true,
-                banner,
-                freeze: false,
-            },
-        ],
-        plugins: minPlugins,
     },
 ];
