@@ -16,7 +16,7 @@ export default [
             {
                 name: 'wgpuMatrix',
                 file: `dist/${ver}/wgpu-matrix.module.js`,
-                format: 'umd',
+                format: 'es',
                 banner
             },
         ],
