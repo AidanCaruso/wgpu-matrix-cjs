@@ -1,5 +1,6 @@
 {
   "name": "wgpu-matrix",
+  "type": "module",
   "version": "3.3.0",
   "description": "fast matrix math library for WebGPU",
   "main": "dist/3.x/wgpu-matrix.module.js",
@@ -44,7 +45,6 @@
     "graphics"
   ],
   "author": "Gregg Tavares",
-  "type": "commonjs",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/greggman/wgpu-matrix/issues"
