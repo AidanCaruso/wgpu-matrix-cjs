@@ -194,3 +194,5 @@ import * as utils from './utils';
 // } = wgpuMatrixAPI<
 //   Mat3n, Mat4n, Quatn, Vec2n, Vec3n, Vec4n>(
 //     ZeroArray, Array, Array, Array, Array, Array);
+
+export const test = 1;
