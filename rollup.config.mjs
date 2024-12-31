@@ -23,8 +23,9 @@ export default [
         input: 'src/wgpu-matrix.ts',
         output: [
             {
+                name: 'wgpuMatrix',
                 file: `dist/${ver}/wgpu-matrix.module.js`,
-                format: 'cjs',
+                format: 'umd',
                 sourcemap: true,
                 banner,
                 freeze: false,
@@ -50,8 +51,9 @@ export default [
         input: 'src/wgpu-matrix.ts',
         output: [
             {
+                name: 'wgpuMatrix',
                 file: `dist/${ver}/wgpu-matrix.module.min.js`,
-                format: 'cjs',
+                format: 'umd',
                 sourcemap: true,
                 banner,
                 freeze: false,
