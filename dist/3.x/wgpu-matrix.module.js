@@ -5916,3 +5916,4 @@
     exports.vec4n = vec4n;
 
 }));
+//# sourceMappingURL=wgpu-matrix.module.js.map
