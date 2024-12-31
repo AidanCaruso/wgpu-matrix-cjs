@@ -7,6 +7,10 @@
     "moduleResolution": "Bundler",
     "esModuleInterop": true,
     "outDir": "dist/3.x",
+    "declaration": true,
+    "noEmit": true,
+    "stripInternal": true,
+    "skipLibCheck": true
   },
   "files": [
     "src/wgpu-matrix.ts",
