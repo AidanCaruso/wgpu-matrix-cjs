@@ -44,7 +44,7 @@
     "graphics"
   ],
   "author": "Gregg Tavares",
-  "type": "module",
+  "type": "commonjs",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/greggman/wgpu-matrix/issues"
