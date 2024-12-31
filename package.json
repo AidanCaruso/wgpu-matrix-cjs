@@ -32,7 +32,7 @@
     "*.d.ts",
     "*.mjs",
     "bin",
-    "dist"
+    "dist/3.x/**"
   ],
   "keywords": [
     "webgpu",
