@@ -107,7 +107,7 @@
         return ((n % m) + m) % m;
     }
 
-    var utils = /*#__PURE__*/Object.freeze({
+    var utils = {
         __proto__: null,
         get EPSILON () { return EPSILON; },
         degToRad: degToRad,
@@ -116,7 +116,7 @@
         lerp: lerp,
         radToDeg: radToDeg,
         setEpsilon: setEpsilon
-    });
+    };
 
     /*
      * Copyright 2022 Gregg Tavares

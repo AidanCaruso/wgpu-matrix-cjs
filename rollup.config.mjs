@@ -8,6 +8,7 @@ const ver = `${/^(\d+)\./.exec(pkg.version)[1]}.x`;
 import commonjs from '@rollup/plugin-commonjs'
 import nodeResolve from '@rollup/plugin-node-resolve';
 import cleanupPlugin from 'rollup-plugin-cleanup';
+import { SourceMap } from 'module';
 
 export default [
     {
@@ -17,7 +18,9 @@ export default [
                 name: 'wgpuMatrix',
                 file: `dist/${ver}/wgpu-matrix.module.js`,
                 format: 'umd',
-                banner
+                banner,
+                SourceMap: true,
+                freeze: false
             },
         ],
         plugins: [
